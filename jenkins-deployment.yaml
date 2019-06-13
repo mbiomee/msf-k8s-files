@@ -2,7 +2,6 @@ apiVersion: extensions/v1beta1 # for versions before 1.7.0 use apps/v1beta1
 kind: Deployment
 metadata:
   name: jenkins-deployment
-  namespace: jenkins
 spec:
   replicas: 1
   selector:
@@ -24,4 +23,4 @@ spec:
       volumes:
       - name: jenkins-persistent-storage
         persistentVolumeClaim:
-           claimName: jenkins-data
+           claimName: task-pv-volume
